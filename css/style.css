@@ -1,0 +1,860 @@
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none; color: #2e4e43;}
+
+body{
+  font-family: 'SUIT-Medium';
+  color: #2e4e43;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: -0.02em;
+}
+
+/*SUIT-Medium*/ 
+
+@font-face {
+  font-family: 'SUIT-Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*SUIT-Bold*/ 
+@font-face {
+  font-family: 'SUIT-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+/*고정*/
+
+.fixed a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.fixed{
+  width: 116px;
+  height: 116px;
+  position: fixed; bottom: 40px; right: 40px;
+  z-index: 300; /*모든 포지션보다 최상단에 위치*/
+}
+.fixed_rotate{
+  display: block;
+  width: 96px;
+  height: 96px;
+  position: fixed; bottom: 50px; right: 50px;
+  animation: fixed linear infinite 15s;
+}
+@keyframes fixed {
+  0%{transform: rotate(0deg);
+  }
+  100%{transform: rotate(360deg);
+  }
+}
+
+
+
+/*메인_배경*/
+
+#top{
+  background: url(../images/header_background.png) no-repeat top center;
+  width: 100%;
+  height: 950px;
+  /* background-size: cover; 지정하니까 높이값 내려옴 ㅠ */
+}
+
+
+
+/*헤더*/
+
+.header{
+  width: 1320px;
+  margin: 0 auto;
+  padding-top: 36px;
+  height: 105px;
+  box-sizing: border-box;
+}
+.header img{display: block; /*이미지 고유의 여백 제거*/
+}
+.symbol{
+  /* display: block; */
+  float: left;
+}
+.logo_small{
+  /* display: block; */
+  float: left;
+  padding-top: 16px;
+  margin-left: 55px;
+}
+
+.menu{
+  position: relative; /*부모 지정*/
+  float: right;
+  margin: 24px 0 24px 30px;
+  width: 30px;
+  height: 20px;
+}
+.menubar{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.menubar_sub{
+  width: 30px;
+  height: 141px;
+  background: url(../images/hover_menubar.png) no-repeat top center;
+  position: absolute; /*상위의 div에 대하여 자식 지정*/
+  top: 0;
+  left: 0;
+  z-index: 160;
+  display: none;
+}
+.menubar_sub ul{
+  padding: 38px 0 0 6px;
+}
+.menubar_sub ul li:nth-child(1){
+  width: 16px;
+  height: 17px;
+  padding-left: 1px;
+}
+.menubar_sub ul li:nth-child(2){
+  width: 18px;
+  height: 13px;
+  margin: 18px 0;
+}
+.menubar_sub ul li:nth-child(3){
+  width: 18px;
+  height: 18px;
+}
+.menubar_sub ul li:hover a img{
+  opacity: 0.8;
+}
+
+.nav{
+  float: right;
+}
+.nav>li{
+  float: left;
+  position: relative; /*부모 지정*/
+  z-index: 99;
+}
+.nav>li>a{
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #2e4e43;
+  padding: 21.5px 30px;
+  position: relative; /*상위의 li와 별개로 자기 자신에게 부모값을 줌*/
+  z-index: 99; /*더 낮은 숫자값을 주더라도 이 a 자기 자신 자체로 부모가 되기 때문에 순서 변경 없음*/
+}
+.nav>li:nth-child(3)>a,
+.nav>li:nth-child(4)>a {
+  transition-property:all; /*속성값*/
+  transition-duration:0.1s; /*효과완료하는 시간*/
+  transition-timing-function:ease-in-out;  /*효과의 속도곡선*/
+}
+.nav>li:nth-child(3):hover>a{
+  color: #718878;
+}
+.nav>li:nth-child(4):hover>a{
+  color: #718878;
+}
+
+
+
+/*서브메뉴*/
+
+.nav>li:nth-child(1):hover>a{
+  color: #eadfd0;
+}
+.nav>li:nth-child(2):hover>a{
+  color: #eadfd0;
+}
+/* .nav li:nth-child(1):hover .sub1{display: block;
+} */
+/* .nav li:nth-child(2):hover .sub2{display: block;
+} */
+
+.sub1{
+  position: absolute; top: -58.5px; left: 0; /*상위의 li에 대하여 자식 지정*/
+  background-color: #2e4e43;
+  width: 125.75px;
+  height: 220px;
+  background: url(../images/sub1_back.png) no-repeat center top;
+  display: none;
+}
+.sub1 ul{
+  margin-top: 125px;
+}
+.sub1 ul li a{
+  display: block;
+  color: #93a69c;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  padding-top: 10px;
+
+  transition-property:all; /*속성값*/
+  transition-duration:0.1s; /*효과완료하는 시간*/
+  transition-timing-function:ease-in-out;  /*효과의 속도곡선*/
+}
+.sub1 ul li a:hover{
+  color: #eadfd0;
+}
+
+.sub2{
+  position: absolute; top: -58.5px; left: 0;
+  background-color: #2e4e43;
+  width: 119.55px;
+  height: 220px;
+  background: url(../images/sub2_back.png) no-repeat center top;
+  display: none;
+}
+.sub2 ul{
+  margin-top: 125px;
+}
+.sub2 ul li a{
+  display: block;
+  color: #93a69c;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  padding-top: 10px;
+}
+.sub2 ul li a:hover{
+  color: #eadfd0;
+}
+
+
+
+/*메인_본문*/
+
+.main_wrap{
+  width: 1320px;
+  height: 845px;
+  margin: 0 auto;
+  position: relative; /*상위 메인 이미지의 부모*/
+}
+
+.main_img{ /*하위 메인 이미지*/
+  width: 680px;
+  height: 680px;
+  border-radius: 50%;
+  margin-top: 14px;
+  float: left;
+  background: url(../images/main_img.jpg) no-repeat left top;
+  animation: horizon 14s ease-in-out forwards; /*스르륵*/
+}
+@keyframes horizon {
+  0%{background-position-x: 0;}
+  45%{background-position-x: -300px;}
+  85%{background-position-x: 0;}
+  100%{background-position-x: -30px;}
+}
+
+.main_img2{ /*상위 메인 이미지*/
+  width: 280px;
+  height: 400px;
+  border-radius: 240px 240px 0 0;
+  position: absolute; /*메인 wrap의 자식*/
+  bottom: 150px;
+  left: 470px;
+}
+
+.main_right{ /*메인 텍스트*/
+  width: 530px;
+  overflow: hidden; /*높이값 자동 지정*/
+  float: right;
+  margin-top: 263px;
+  padding-left: 30px;
+  box-sizing: border-box;
+}
+.main_right img{ /*메인 타이틀 움직임*/
+	-webkit-animation: fade-in-right 0.6 1.8s ease ;
+	        animation: fade-in-right 0.6 1.8s ease ;
+}
+ @-webkit-keyframes fade-in-right {
+  0% {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-right {
+  0% {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.main_right p{
+  margin-top: 40px;
+}
+
+
+
+/*con1 봄 에디션*/
+
+#con1_wrap{
+  width: 1320px;
+  height: 1050px;
+  background: url(../images/con1_back.png) no-repeat top center;
+  margin: 0 auto;
+  margin-bottom: 200px;
+}
+.con1_text{ /*con1 상단 텍스트*/
+  width: 100%;
+  overflow: hidden; /*높이값 자동 지정*/
+  padding-top: 200px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.con1_title{ /*con1 제목 plum blossom*/
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 60px;
+}
+
+.con1_product{ /*con1 상품 3개 감싸는 ul*/
+  width: 100%;
+  height: 560px;
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.con1_product li{ /*con1 상품 3개 각각 li*/
+  width: 400px;
+  overflow: hidden; /*높이값 자동 지정*/
+}
+.con1_product li:nth-child(2){ /*con1 2번째 상품 아래에 위치*/
+  align-self: flex-end;
+}
+.con1_product_name{ /*con1 상품 이름*/
+  width: 100%;
+  margin-top: 20px;
+  overflow: hidden; /*높이값 자동 지정*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.con1_product_name p{
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -0.015em;
+}
+.con1_product_name a{
+  color: #718878; /*p태그에 적용하니까 안 먹혀서 따로 지정*/
+  transition-property:all; /*속성값*/
+  transition-duration:0.2s; /*효과완료하는 시간*/
+  transition-timing-function:ease-in-out;  /*효과의 속도곡선*/
+}
+.con1_product_name p:hover a{
+  color: #93a69c;
+
+}
+.con1_cart{ /*con1 상품 장바구니 아이콘*/
+  width: 27px;
+  height: 20px;
+  position: relative;
+}
+.con1_cart img:nth-child(1){
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 19;
+}
+.con1_cart img:nth-child(2){
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  display: none; /*안 보였다가 hover시 보임. 제이쿼리로 효과*/
+}
+
+.hover_effect_box { /*상품 이미지 속성*/
+  display: block;
+  width: 400px;
+  height: 460px;
+  border-radius: 200px 200px 0 0;
+  overflow: hidden;
+  position: relative; /*hover_wrap의 부모*/
+  text-align: center;
+  box-sizing: initial;
+}
+.hover_effect_box .caption { /*hover wrap 속성*/
+  width: 400px;
+  height: 460px;
+  border-radius: 200px 200px 0 0;
+  position: absolute; /*상위 box의 자식*/
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+.hover_effect_box .content_bg { /*이미지 속성*/
+  display: block;
+  position: relative;
+  width: 400px;
+  height: 460px;
+  border-radius: 200px 200px 0 0;
+  overflow: hidden;
+}
+.hover_effect_box .caption_title { /*글 속성*/
+  text-transform: uppercase;
+  color: #f6f1e9;
+  text-align: center;
+  position: relative;
+  font-size: 18px;
+  line-height: 32px;
+  font-family: 'SUIT-Medium';
+
+  width: 400px;
+  height: 200px;
+  border-radius: 200px 200px 0 0;
+  padding-top: 60px;
+  margin-top: 100px; /*링크 영역 둥글게 맞추기 위해서 마진과 패딩을 각각 나누어줌*/
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.hover_effect_box .caption_desc { /*금액 속성*/
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 600;
+   font-size: 22px;
+   position: relative;
+   color: #2e4e43;
+   text-align: center;
+   border-top: 2px solid #2e4e43;
+
+   width: 130px;
+   margin: 0 auto;
+   padding: 20px 0;
+   overflow: hidden; /*높이값 자동 지정*/
+   box-sizing: border-box;
+}
+.caption_desc span{
+  font-size: 16px;
+}
+
+.hover_effect_1 .content_bg { /*이미지 효과*/
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.hover_effect_1 .caption { /*hover wrap 원래 위치*/
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  background-color: rgba(147, 166, 156, 0.8);
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.hover_effect_1 .caption_title { /*글 원래 위치*/
+  -webkit-transform: translateY(-100px);
+  -moz-transform: translateY(-100px);
+  -o-transform: translateY(-100px);
+  -ms-transform: translateY(-100px);
+  transform: translateY(-100px);
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.hover_effect_1 .caption_desc { /*금액 원래 위치*/
+  -webkit-transform: translateY(100px);
+  -moz-transform: translateY(100px);
+  -o-transform: translateY(100px);
+  -ms-transform: translateY(100px);
+  transform: translateY(100px);
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.hover_effect_1:hover .content_bg { /*hover시 이미지 커짐*/
+  -webkit-transform: scale(1.1,1.1);
+  -moz-transform: scale(1.1,1.1);
+  -o-transform: scale(1.1,1.1);
+  -ms-transform: scale(1.1,1.1);
+  transform: scale(1.1,1.1);
+}
+.hover_effect_1:hover .caption { /*hover시 hover_wrap 나타남*/
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+.hover_effect_1:hover .caption_desc,
+.hover_effect_1:hover .caption_title { /*hover시 hover_wrap 내용 나타남*/
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+  /* visibility: visible; */
+}
+.hover_effect_1:hover .caption_desc { /*금액이 좀 더 늦게 나타남*/
+  -webkit-transition-delay: 0.1s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -ms-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+
+
+
+/*con2 Flowery 상품*/
+
+#con2_wrap1{ /*con2 패턴 설명 감싸는 wrap*/
+  width: 100%;
+  height: 420px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+.con2_wrap1_left{ /*con2 왼쪽 패턴 이미지*/
+  width: 940px;
+  height: 420px;
+  float: left;
+  background: url(../images/con2_pattern.jpg) left 50px;
+  border-radius: 0 210px 0 0;
+  animation: infinite 20s linear infinite alternate; /*배경 이미지 계속 움직이게*/
+}
+@keyframes infinite {
+  0%{background-position-x: 0;}
+  100%{background-position-x: 300px;}
+}
+
+.con2_wrap1_right{ /*con2 오른쪽 설명*/
+  width: 500px;
+  height: 100%;
+  float: left;
+  margin-left: 180px;
+  background: url(../images/circle_back.png) no-repeat left top;
+}
+.con2_wrap1_right img{ /*con2 제목*/
+  display: block;
+  margin-top: 110px;
+  margin-bottom: 50px;
+}
+.mont{ /*con2 설명글 내에 영어 부분은 다른 폰트 사용*/
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+#con2_wrap2{ /*con2 상품 감싸는 wrap*/
+  width: 1320px;
+  overflow: hidden; /*높이값 자동 지정*/
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 180px;
+}
+#con2_wrap2 li{
+  width: 315px;
+  overflow: hidden;
+}
+.fontsize{
+  margin-top: 10px;
+}
+.fontsize p{ /*con1의 상품 이름 style 그대로 사용하지만 폰트 크기만 수정하는 class*/
+  font-size: 18px;
+}
+
+.banner{
+  width: 98%; /*어렵어렵*/
+  height: 308.69px;
+  cursor: pointer; /*지정해야 hover 가능*/
+}
+.banner img{
+  display: block;
+}
+
+
+.banner{position:relative;
+  display:inline-block;
+  margin: 2px;
+}
+.banner a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.banner img{
+  max-width:100%; 
+  display:block;
+}
+.banner::before, .banner::after{
+  content:' ';
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:100%;
+  height:100%;
+  transform:translate(-50%,-50%);
+  transition:all 0.8s;
+}
+.banner::before{
+  border-top:2px solid #718878;
+  border-bottom:2px solid #718878;
+  width:0;
+}
+.banner::after{
+  border-left:2px solid #718878;
+  border-right:2px solid #718878;
+  height:0;
+}
+.banner:hover::before{width:100.6%;}
+.banner:hover::after{height:100.6%;}
+
+
+
+/*con3 Greenery 상품*/
+
+.con3_wrap1_left{ /*con3 왼쪽 설명*/
+  width: 500px;
+  height: 100%;
+  float: left;
+  margin-left: 350px;
+  background: url(../images/circle_back2.png) no-repeat left top;
+}
+.con3_wrap1_right{ /*con3 오른쪽 패턴 이미지*/
+  width: 940px;
+  height: 420px;
+  float: right;
+  background-color: #2e4e43;
+  border-radius: 0 0 0 210px;
+}
+.con3_wrap1_left img{ /*con2 제목*/
+  display: block;
+  margin-top: 110px;
+  margin-bottom: 50px;
+}
+
+
+
+/*con4 오프라인 샵*/
+
+#con4_wrap{
+  width: 1320px;
+  height: 985px;
+  margin: 0 auto;
+  margin-top: 200px;
+  background: url(../images/con4_back.png) no-repeat center top;
+  margin-bottom: 180px;
+}
+#con4_wrap h2{ /*con4 제목*/
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 42px;
+  letter-spacing: -0.02em;
+  padding-top: 70px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+.overflow{
+  overflow: hidden;
+}
+#con4_wrap p{
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+/*con4 왼쪽 슬라이드 이미지 slide 소스 s*/
+
+.swiper-container {
+  width: 750px;
+  height: 480px;
+  float: left;
+  margin-left: 60px;
+}
+.swiper-slide {
+  text-align: center; font-size: 18px; background: #fff;
+			  /* Center slide text vertically */
+			  display: -webkit-box;
+			  display: -ms-flexbox;
+			  display: -webkit-flex;
+			  display: flex;
+			  -webkit-box-pack: center;
+			  -ms-flex-pack: center;
+			  -webkit-justify-content: center;
+			  justify-content: center;
+			  -webkit-box-align: center;
+			  -ms-flex-align: center;
+			  -webkit-align-items: center;
+			  align-items: center;
+      }
+.swiper-slide img{
+  width:100%;
+}
+/*블릿버튼 영역*/
+.swiper-pagination-bullet{background:#2e4e43; width:10px; height:10px; opacity:0.5;}
+.swiper-pagination-bullet-active{opacity:1;}
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets{bottom:10px;}
+
+/*con4 왼쪽 슬라이드 이미지 slide 소스 f*/
+
+.con4_right{ /*con4 오른쪽 페이드 이미지*/
+  width: 320px;
+  height: 480px;
+  float: right;
+  animation: fade ease 35s infinite forwards;
+  background: url(../images/con4_img2_1.jpg) no-repeat top center;
+  margin-right: 60px;
+}
+@keyframes fade {
+  0%{background: url(../images/con4_img2_1.jpg) no-repeat top center;}  
+  15%{background: url(../images/con4_img2_2.jpg) no-repeat top center;}  
+  30%{background: url(../images/con4_img2_3.jpg) no-repeat top center;}  
+  46%{background: url(../images/con4_img2_4.jpg) no-repeat top center;}  
+  60%{background: url(../images/con4_img2_5.jpg) no-repeat top center;}  
+  75%{background: url(../images/con4_img2_7.jpg) no-repeat top center;}  
+  90%{background: url(../images/con4_img2_6.jpg) no-repeat top center;}  
+}
+
+.con4_info{ /*con4 shop 정보*/
+  float: left;
+  margin-top: 20px;
+  width: 600px;
+  overflow: hidden; /*높이값 자동 지정*/
+  display: flex;
+  justify-content: space-between;
+}
+.con4_info li{
+  width: 50%;
+  padding-left: 20px;
+  box-sizing: border-box;
+  border-left: 3px solid #718878;
+}
+
+
+
+
+/*footer*/
+
+#footer{ /*푸터_배경*/
+  width: 100%;
+  height: 500px;
+  background: url(../images/footer_background.png) no-repeat top center;
+  background-size: cover;
+  padding-top: 170px;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+}
+
+.footer_inner{
+  width: 1320px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.footer_symbol{
+  float: left;
+  margin-top: 5px;
+}
+.footer_symbol a{
+  display: block;
+  width: 77px;
+  margin-left: 15px;
+  height: 100px;
+}
+.footer_logotype{
+  display: block;
+  margin-top: 10px;
+}
+
+.footer_link{ /*nav*/
+  float: left;
+  margin-left: 60px;
+}
+.footer_link li a{
+  display: block;
+  color: #718878;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 2px 0;
+}
+.footer_link li a:hover{ /*링크 hover시 색상 변환*/
+  color: #93a69c;
+}
+
+.footer_text{ /*정보*/
+  float: right;
+  margin-left: 100px;
+}
+.footer_text li{
+  font-size: 14px;
+  color: #718878;
+  letter-spacing: 0;
+  padding: 2px 0;
+  line-height: 24px;
+}
+.footer_text li:nth-child(1){
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: -0.015em;
+}
+.montserrat{ /*영어텍스트 폰트변경*/
+  font-family: 'Montserrat', sans-serif;
+}
+
+.fnb{
+  clear: both;
+  float: left;
+  color: #718878;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 100px;
+}
+.fnb2{
+  color: #718878;
+  font-size: 14px;
+  letter-spacing: 0;
+  float: right;
+  margin-left: 70px;
+  margin-top: 100px;
+}
+.hover:hover{ /*링크 hover시 색상 변환*/
+  color: #93a69c;
+}
