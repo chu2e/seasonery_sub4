@@ -658,7 +658,7 @@ body{
   width: 940px;
   height: 420px;
   float: right;
-  background: url(../images/con3_pattern.jpg) left 20px;
+  background: url(../images/con3_pattern.jpg) left top;
   border-radius: 0 0 0 210px;
   animation: infinite 20s linear infinite alternate; /*배경 이미지 계속 움직이게*/
 }
