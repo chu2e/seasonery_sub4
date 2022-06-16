@@ -658,8 +658,13 @@ body{
   width: 940px;
   height: 420px;
   float: right;
-  background-color: #2e4e43;
+  background: url(../images/con3_pattern.jpg) left 20px;
   border-radius: 0 0 0 210px;
+  animation: infinite 20s linear infinite alternate; /*배경 이미지 계속 움직이게*/
+}
+@keyframes infinite {
+  0%{background-position-x: 0;}
+  100%{background-position-x: -300px;}
 }
 .con3_wrap1_left img{ /*con2 제목*/
   display: block;
